@@ -16,7 +16,7 @@ class Image extends MainController
         $image
             ->fromFile(__DIR__ . '/../img/public/foo.jpg')
             ->rotate('45', 'transparent')
-            ->overlay(__DIR__ . '/../img/public/watermark.png', 'center center')
+            ->overlay(__DIR__ . '/../img/public/watermark.png', 'top left')
             ->fitToWidth(200)
             ->toFile(__DIR__ . '/../img/public/new-image.png', 'image/png');
         $this->view->twigLoad('image', ['image' => $newImg]);

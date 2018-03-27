@@ -1,4 +1,6 @@
-База данных, name: '**burger**'
+1. Console `composer install`
+2. Edit `core/config.php`
+3. Create table **users**
 
 `CREATE TABLE users
 (
@@ -10,6 +12,8 @@
 CREATE UNIQUE INDEX users_email_uindex ON users (email);
 `
 
+4. Create table **orders**
+
 `CREATE TABLE orders
 (
     id_order INT PRIMARY KEY AUTO_INCREMENT,
@@ -19,10 +23,6 @@ CREATE UNIQUE INDEX users_email_uindex ON users (email);
     comment_order VARCHAR(255)
 );`
 
-Админ панель - **/admin.php**
+Админ панель - **/admin**
 
-
-mail.txt
-mail.example.php
-example-captcha.php
-core/config.php
+Манипуляции с картинкой - **/image** ( используеться `claviska/simpleimage` )

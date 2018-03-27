@@ -14,6 +14,7 @@ class Mail extends MainController
             //Server settings
             //$mail->SMTPDebug = 2;                                 // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->CharSet = 'UTF-8';
             $mail->Host = MAIL_HOST;
             $mail->SMTPAuth = true;
             $mail->Username = MAIL_USERNAME;
@@ -26,15 +27,14 @@ class Mail extends MainController
 
             $mail->isHTML(true);                                  // Set email format to HTMLs
             $mail->Subject = $subject;
-            $mail->Body    = $contentMsg;
+            $mail->Body = $contentMsg;
             $mail->AltBody = $contentMsg;
 
             $mail->send();
-            echo 'message';
+           // echo 'message';
         } catch (Exception $e) {
             echo 'Message could not be sent.';
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
+           // echo 'Mailer Error: ' . $mail->ErrorInfo;
         }
-
     }
 }
