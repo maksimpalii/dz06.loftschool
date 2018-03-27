@@ -1,0 +1,13 @@
+{% extends 'layout_blank.twig' %}
+{% block title %}Blank{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        body {
+            background: #cccccc;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <img src="{{ image }}"/>
+{% endblock %}
