@@ -65,6 +65,24 @@ $('.order__form-button_submit').on('click', function (e) {
                     'transform': 'translate(-50%, -50%)', 'background': '#ffffff'
                 });
                 break;
+            case 'message & registrationMessage could not be sent.':
+                $('#success .status-popup__message').html('Сообщение не было отправлено!');
+                $('#success').css({
+                    'display': 'block', 'position': 'fixed', 'top': '50%', 'left': '50%',
+                    '-webkit-transform': 'translate(-50%, -50%)',
+                    '-ms-transform': 'translate(-50%, -50%)',
+                    'transform': 'translate(-50%, -50%)', 'background': '#ffffff'
+                });
+                break;
+            case 'messageMessage could not be sent.':
+                $('#success .status-popup__message').html('Сообщение не было отправлено!');
+                $('#success').css({
+                    'display': 'block', 'position': 'fixed', 'top': '50%', 'left': '50%',
+                    '-webkit-transform': 'translate(-50%, -50%)',
+                    '-ms-transform': 'translate(-50%, -50%)',
+                    'transform': 'translate(-50%, -50%)', 'background': '#ffffff'
+                });
+                break;
             case 'message & registration':
                 $('#success .status-popup__message').html('Сообщение отправлено и зарегистрированы!');
                 $('#success').css({

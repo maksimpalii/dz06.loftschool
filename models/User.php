@@ -1,14 +1,10 @@
 <?php
+
 namespace App;
 
 class User extends MainController
 {
-    protected function getPD()
-    {
-        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_DATABASE . ';charset=utf8';
-        $pdo = new \PDO($dsn, DB_USERNAME, DB_PASSWORD);
-        return $pdo;
-    }
+
     public function getAllUser()
     {
         $usersView = $this->getPD()->prepare('SELECT * FROM users');
@@ -16,12 +12,18 @@ class User extends MainController
         $data = $usersView->fetchAll(\PDO::FETCH_ASSOC);
         return $data;
     }
-    public function getAllOrder()
+
+    public function registrUser($name, $phone, $email)
     {
-        $usersView = $this->getPD()->prepare('SELECT * FROM orders');
-        $usersView->execute();
-        $data = $usersView->fetchAll(\PDO::FETCH_ASSOC);
-        return $data;
+        $registr = $this->getPD()->prepare('INSERT INTO users (name, number, email) VALUES (:name, :number, :email)');
+        $registr->execute(['name' => $name, 'number' => $phone, 'email' => $email]);
     }
 
+    public function verificationUser($email)
+    {
+        $verification = $this->getPD()->prepare('SELECT * FROM users where email =:email');
+        $verification->execute(['email' => $email]);
+        $data = $verification->fetch(\PDO::FETCH_ASSOC);
+        return $data;
+    }
 }
