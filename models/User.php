@@ -2,7 +2,7 @@
 
 namespace App;
 
-class User extends MainController
+class User extends MainModel
 {
 
     public function getAllUser()

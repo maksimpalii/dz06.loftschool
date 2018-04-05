@@ -1,5 +1,5 @@
 1. Console `composer install`
-2. Edit `core/config.php`
+2. Create `core/config.php` as `core/config-sample.php`
 3. Create table **users**
 
 `CREATE TABLE users

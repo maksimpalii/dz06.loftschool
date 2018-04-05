@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Order extends MainController
+class Order extends MainModel
 {
     public function getAllOrder()
     {
