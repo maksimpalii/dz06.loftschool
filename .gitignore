@@ -3,4 +3,3 @@ vendor
 maillog
 img/public/new-image.png
 core/my-config.php
-core/config.php
